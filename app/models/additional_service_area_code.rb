@@ -1,3 +1,3 @@
 class AdditionalServiceAreaCode < ApplicationRecord
-    belongs_to :serviceArea
+    belongs_to :service_area
 end

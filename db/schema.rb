@@ -15,17 +15,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_321908) do
   enable_extension "plpgsql"
 
   create_table "additional_service_area_codes", force: :cascade do |t|
-    t.text "SACode", default: [], array: true
+    t.text "sa_code", default: [], array: true
   end
 
   create_table "excavators", force: :cascade do |t|
-    t.text "companyName"
+    t.text "company_name"
     t.text "address"
-    t.boolean "crewOnsite"
+    t.boolean "crew_on_site"
   end
 
   create_table "primary_service_area_codes", force: :cascade do |t|
-    t.text "SACode"
+    t.text "sa_code"
   end
 
   create_table "service_areas", force: :cascade do |t|
@@ -37,23 +37,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_321908) do
   end
 
   create_table "ticket_dates", force: :cascade do |t|
-    t.datetime "requestTakenDateTime", null: false
-    t.datetime "transmissionDateTime", null: false
-    t.datetime "legalDateTime", null: false
-    t.datetime "responseDueDateTime", null: false
-    t.datetime "restakeDate", null: false
-    t.datetime "expirationDate", null: false
-    t.datetime "lpmMettingAcceptDueDate", null: false
-    t.datetime "overheadBeginDate", null: false
-    t.datetime "overheadEndDate", null: false
+    t.datetime "request_taken_date_time", null: false
+    t.datetime "transmission_date_time", null: false
+    t.datetime "legal_date_time", null: false
+    t.datetime "response_due_date_time", null: false
+    t.datetime "restake_date", null: false
+    t.datetime "expiration_date", null: false
+    t.datetime "lpm_metting_accept_due_date", null: false
+    t.datetime "overhead_begin_date", null: false
+    t.datetime "overhead_end_date", null: false
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.text "requestNumber"
-    t.integer "versionNumber"
-    t.integer "sequenceNumber"
-    t.text "requestType"
-    t.text "requestAction"
+    t.text "request_number"
+    t.integer "version_number"
+    t.integer "sequence_number"
+    t.text "request_type"
+    t.text "request_action"
     t.bigint "service_areas_id"
     t.bigint "ticket_dates_id"
     t.index ["service_areas_id"], name: "index_tickets_on_service_areas_id"
