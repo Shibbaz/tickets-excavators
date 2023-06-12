@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_321908) do
   end
 
   create_table "tickets", force: :cascade do |t|
+    t.text "contact_center"
     t.text "request_number"
     t.integer "version_number"
     t.integer "sequence_number"
