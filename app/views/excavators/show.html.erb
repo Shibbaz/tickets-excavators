@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @excavator %>
+
+<div>
+  <%= link_to "Edit this excavator", edit_excavator_path(@excavator) %> |
+  <%= link_to "Back to excavators", excavators_path %>
+
+  <%= button_to "Destroy this excavator", @excavator, method: :delete %>
+</div>

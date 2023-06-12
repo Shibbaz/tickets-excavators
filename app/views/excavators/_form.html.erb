@@ -1,0 +1,22 @@
+<%= form_with(model: excavator) do |form| %>
+  <% if excavator.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(excavator.errors.count, "error") %> prohibited this excavator from being saved:</h2>
+
+      <ul>
+        <% excavator.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :companyName, style: "display: block" %>
+    <%= form.text_area :companyName %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

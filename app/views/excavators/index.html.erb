@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Excavators</h1>
+
+<div id="excavators">
+  <% @excavators.each do |excavator| %>
+    <%= render excavator %>
+    <p>
+      <%= link_to "Show this excavator", excavator %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New excavator", new_excavator_path %>
