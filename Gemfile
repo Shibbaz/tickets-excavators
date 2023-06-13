@@ -76,6 +76,6 @@ gem "dataloader"
 gem 'activerecord-postgis-adapter'
 gem 'faker'
 gem "mapkick-rb"
-
+gem 'redis'
 
 
