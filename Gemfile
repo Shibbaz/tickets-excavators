@@ -73,3 +73,9 @@ end
 
 gem 'byebug'
 gem "dataloader"
+gem 'activerecord-postgis-adapter'
+gem 'faker'
+gem "mapkick-rb"
+
+
+

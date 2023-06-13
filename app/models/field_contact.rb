@@ -1,0 +1,2 @@
+class FieldContact < ApplicationRecord
+end

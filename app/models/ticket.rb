@@ -1,6 +1,7 @@
 class Ticket < ApplicationRecord
     has_one :ticket_date
     has_one :service_area
+    has_one :excavator
 
     def ticket_dates
         loader = Dataloader.new do |ids|

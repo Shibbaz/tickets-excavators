@@ -1,0 +1,2 @@
+class Itoi < ApplicationRecord
+end

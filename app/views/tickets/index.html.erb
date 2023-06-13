@@ -10,5 +10,7 @@
     </p>
   <% end %>
 </div>
+<%= byebug
+area_map [{geometry: {type: "Polygon", coordinates: [DigsiteInfo.find(589).polygon]}, label: "Hello", tooltip: "World"}] %>
 
 <%= link_to "New ticket", new_ticket_path %>

@@ -54,6 +54,9 @@ GEM
     activerecord (7.0.5)
       activemodel (= 7.0.5)
       activesupport (= 7.0.5)
+    activerecord-postgis-adapter (8.0.2)
+      activerecord (~> 7.0.0)
+      rgeo-activerecord (~> 7.0.0)
     activestorage (7.0.5)
       actionpack (= 7.0.5)
       activejob (= 7.0.5)
@@ -92,6 +95,8 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    faker (3.2.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -113,6 +118,7 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mapkick-rb (0.1.4)
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -172,6 +178,10 @@ GEM
     reline (0.3.5)
       io-console (~> 0.5)
     rexml (3.2.5)
+    rgeo (3.0.0)
+    rgeo-activerecord (7.0.1)
+      activerecord (>= 5.0)
+      rgeo (>= 1.0.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -215,13 +225,16 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-postgis-adapter
   bootsnap
   byebug
   capybara
   dataloader
   debug
+  faker
   importmap-rails
   jbuilder
+  mapkick-rb
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.5)

@@ -1,0 +1,2 @@
+class ExcavationInfo < ApplicationRecord
+end
