@@ -7,7 +7,7 @@ module Trees
             
             def call
                 ticket_dates = Contexts::TicketsDates::Commands::Build.new(@params[:DateTimes]).call
-                excavation_info = Trees::ExcavationInfos::Build.new(@params[:ExcavationInfo]).call
+                excavation_info = Trees::ExcavationInfo::Build.new(@params[:ExcavationInfo]).call
                 excavator = Trees::Excavator::Build.new(@params[:Excavator]).call
                 service_area = Trees::ServiceArea::Build.new(@params[:ServiceArea]).call
                 ticket = Contexts::Tickets::Commands::Build.new.call(

@@ -1,5 +1,5 @@
 module Trees
-    module ExcavationInfos
+    module ExcavationInfo
         class Build
             def initialize(params)
                 @params = params
