@@ -19,8 +19,8 @@ module Contexts
 
             private
             def format(object)
-                additionalRepository = ::Contexts::AdditionalServiceAreaCodes::Repository.new
-                primaryRepository = ::Contexts::PrimaryServiceAreaCodes::Repository.new
+                additionalRepository = ::Contexts::AdditionalServiceAreas::Repository.new
+                primaryRepository = ::Contexts::PrimaryServiceAreas::Repository.new
                 [
                     PrimaryServiceAreaCode: primaryRepository.load(object.primary_service_area_codes_id),
                     AdditionalServiceAreaCodes: additionalRepository.load(object.additional_service_area_codes_id)

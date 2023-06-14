@@ -1,5 +1,5 @@
 module Contexts
-    module TicketDates
+    module TicketsDates
         module Commands
             class Build
                 def initialize(params)
@@ -7,17 +7,17 @@ module Contexts
                 end
 
                 def call
-                    response_due_date_time = new Date(@params["ResponseDueDateTime"])
-                    transmission_date_time = new Date(@params["TransmissionDateTime"])
-                    legal_date_time = new Date(@params["LegalDateTime"])
-                    request_taken_date_time = new Date(@params["RequestTakenDateTime"])
-                    restake_date = new Date(@params["RestakeDate"])
-                    expiration_date = new Date(@params["ExpirationDate"])
-                    overhead_begin_date = new Date(@params["OverheadBeginDate"])
-                    lpm_metting_accept_due_date = new Date(@params["LPMeetingAcceptDueDate"])
-                    overhead_end_date = new Date(@params["OverheadEndDate"])
+                    response_due_date_time = @params[:ResponseDueDateTime]
+                    transmission_date_time = @params[:TransmissionDateTime]
+                    legal_date_time = @params[:LegalDateTime]
+                    request_taken_date_time = @params[:RequestTakenDateTime]
+                    restake_date = @params[:RestakeDate]
+                    expiration_date = @params[:ExpirationDate]
+                    overhead_begin_date = @params[:OverheadBeginDate]
+                    lpm_metting_accept_due_date = @params[:LPMmettingAcceptDueDate]
+                    overhead_end_date = @params[:OverheadEndDate]
                     TicketDates.transaction do
-                        TicketDates.create(
+                        TicketDates.create(id: Faker::Number.number(digits: 8), 
                             response_due_date_time: response_due_date_time, 
                             transmission_date_time: transmission_date_time,
                             legal_date_time: legal_date_time,

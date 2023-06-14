@@ -6,6 +6,10 @@ class TicketsController < ApplicationController
     @tickets = Ticket.all
   end
 
+  def create
+    Trees::Ticket::Build.new(params[:data]).call
+  end
+
   def show
     render :json => {
       RequestType: @ticket.request_type,
@@ -16,7 +20,7 @@ class TicketsController < ApplicationController
       DateTimes: @ticket.ticket_dates,
       ServiceArea: ::Contexts::ServiceAreas::Repository.new.load(@ticket.service_areas_id),
       Excavator: ::Contexts::Excavators::Repository.new.load(@ticket.excavator_id),
-      ExcavationInfo: ::Contexts::ExcavationInfos::Repository.new.load(@ticket.excavation_info_id)
+      ExcavationInfo: ::Contexts::ExcavationDatas::Repository.new.load(@ticket.excavation_info_id)
     }
   end
 
@@ -24,5 +28,9 @@ class TicketsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
       @ticket = Ticket.find(params[:id])
+    end
+
+    def ticket_params
+      params.permit(:data)
     end
 end

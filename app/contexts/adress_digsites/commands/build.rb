@@ -8,8 +8,7 @@ module Contexts
 
                 def call
                     AdressDigsite.transaction do
-                        AdressDigsite.create(adress_num: @params[:AdressNum])
-                        adress.save!
+                        AdressDigsite.create(id: Faker::Number.number(digits: 8), adress_num: @params[:AdressNum])
                     end
                 rescue => e
                     { error: e.message }

@@ -1,5 +1,5 @@
 module Contexts
-    module ExcavationInfo
+    module ExcavationDatas
         module Commands
             class Build
                 def initialize(params)
@@ -8,7 +8,8 @@ module Contexts
 
                 def call(digsite_infos_id:)
                     ExcavationInfo.transaction do
-                        entity = ExcavationInfo.new(
+                        ExcavationInfo.create(
+                            id: Faker::Number.number(digits: 8),
                             type_of_work: @params[:TypeOfWork],
                             work_done_for: @params[:WorkDoneFor],
                             project_duration: @params[:ProjectDuration],
@@ -21,7 +22,6 @@ module Contexts
                             remarks: @params[:Remarks],
                             digsite_infos_id: digsite_infos_id
                         )
-                        entity.save!
                     end
                 rescue => e
                     { error: e.message }

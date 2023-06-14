@@ -8,7 +8,7 @@ module Contexts
 
                 def call
                     Itoi.transaction do
-                        entity = Itoi.new(
+                        Itoi.create(
                             state: @params[:State],
                             county: @params[:County],
                             place: @params[:Place],
@@ -17,7 +17,6 @@ module Contexts
                             dig_type: @params[:Type],
                             suffix: @params[:Suffix]
                         )
-                        entity.save!
                     end
                 rescue => e
                     { error: e.message }

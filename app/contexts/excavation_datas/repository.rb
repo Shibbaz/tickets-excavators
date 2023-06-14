@@ -1,5 +1,5 @@
 module Contexts
-    module ExcavationInfos
+    module ExcavationDatas
         class Repository
             def initialize(adapter: ExcavationInfo)
                 @adapter = adapter

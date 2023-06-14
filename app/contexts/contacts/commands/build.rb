@@ -8,8 +8,7 @@ module Contexts
 
                 def call
                     Contact.transaction do
-                        entity = Contact.new(name: @params[:Name], phone: @params[:Phone], email: @params[:Email])
-                        entity.save!
+                        Contact.create(name: @params[:Name], phone: @params[:Phone], email: @params[:Email])
                     end
                 rescue => e
                     { error: e.message }

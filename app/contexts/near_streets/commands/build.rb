@@ -8,7 +8,8 @@ module Contexts
             
                 def call
                     NearStreet.transaction do
-                        entity = NearStreet.new(
+                        NearStreet.create(
+                            id: Faker::Number.number(digits: 8),
                             state: @params[:State],
                             county: @params[:County],
                             place: @params[:Place],
@@ -17,7 +18,6 @@ module Contexts
                             dig_type: @params[:Type],
                             suffix: @params[:Suffix]
                         )
-                        entity.save!
                     end
                 rescue => e
                     { error: e.message }

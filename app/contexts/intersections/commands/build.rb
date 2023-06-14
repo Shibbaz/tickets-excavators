@@ -8,10 +8,10 @@ module Contexts
 
                 def call(itoi_ids: [])
                     Intersection.transaction do
-                        entity = Intersection.new(
+                        Intersection.create(
+                            id: Faker::Number.number(digits: 8),
                             itoi_ids: itoi_ids
                         )
-                        entity.save!
                     end
                 rescue => e
                     { error: e.message }

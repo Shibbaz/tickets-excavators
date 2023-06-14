@@ -8,19 +8,12 @@ Bundler.require(*Rails.groups)
 
 module Solution
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
     config.eager_load_paths += Dir[Rails.root.join('app/contexts/**/**.rb')].each { |rb| require rb }
     config.eager_load_paths += Dir[Rails.root.join('app/contexts/**/**/**.rb')].each { |rb| require rb }
-    config.eager_load_paths += Dir[Rails.root.join('lib/**.rb')].each { |rb| require rb }
+    config.eager_load_paths += Dir[Rails.root.join('lib/**/**.rb')].each { |rb| require rb }
+
+    config.eager_load_paths += Dir[Rails.root.join('lib/**/**/**.rb')].each { |rb| require rb }
     config.cache_store = :redis_cache_store
     Mapkick.options[:access_token] = Rails.application.credentials.config[:access_token]
     config.action_controller.perform_caching = true

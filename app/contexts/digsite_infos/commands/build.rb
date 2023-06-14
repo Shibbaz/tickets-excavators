@@ -8,7 +8,8 @@ module Contexts
 
                 def call(adress_info_id:, near_street_id:, intersection_id:)
                     DigsiteInfo.transaction do
-                        entity = DigsiteInfo.new(
+                        DigsiteInfo.create(
+                            id: Faker::Number.number(digits: 8),
                             polygon: @params[:WellKnownText], 
                             look_up_by: @params[:LookUpBy],
                             location_type: @params[:Type],
@@ -17,7 +18,6 @@ module Contexts
                             near_streets_id: near_street_id,
                             intersections_id: intersection_id
                         )
-                        entity.save!
                     end
                 rescue => e
                     { error: e.message }

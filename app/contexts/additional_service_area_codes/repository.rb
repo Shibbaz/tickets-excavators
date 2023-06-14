@@ -1,5 +1,5 @@
 module Contexts
-    module AdditionalServiceAreaCodes
+    module AdditionalServiceAreas
         class Repository
             def initialize(adapter: AdditionalServiceAreaCode)
                 @adapter = adapter

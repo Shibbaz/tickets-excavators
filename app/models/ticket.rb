@@ -39,7 +39,8 @@ class Ticket < ApplicationRecord
             ExpirationDate: ticket_dates.expiration_date,
             LPMmettingAcceptDueDate: ticket_dates.lpm_metting_accept_due_date,
             OverheadBeginDate: ticket_dates.overhead_begin_date,
-            OverheadEndDate: ticket_dates.overhead_end_date
+            OverheadEndDate: ticket_dates.overhead_end_date,
+            TransmissionDateTime: ticket_dates.transmission_date_time
         ]
     end
 

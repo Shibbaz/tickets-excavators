@@ -8,7 +8,8 @@ module Contexts
 
                 def call(contact_id:, field_contact_id:)
                     Excavator.transaction do
-                        entity = Excavator.new(
+                        Excavator.create(
+                            id: Faker::Number.number(digits: 8),
                             contacts_id: contact_id,
                             field_contacts_id: field_contact_id,
                             company_name: @params[:Company], 
@@ -19,7 +20,6 @@ module Contexts
                             crew_on_site: @params[:CrewOnsite],
                             type: @params[:ExcavatorType]
                         )
-                        entity = entity.save!
                     end
                 rescue => e
                     { error: e.message }

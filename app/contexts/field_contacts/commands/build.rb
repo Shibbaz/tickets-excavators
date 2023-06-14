@@ -8,12 +8,12 @@ module Contexts
 
                 def call
                     FieldContact.transaction do
-                        entity = FieldContact.new( 
+                        FieldContact.create( 
+                            id: Faker::Number.number(digits: 8),
                             name: @params[:Name],
                             phone: @params[:Phone],
                             email: @params[:Email]
                         )
-                        entity.save!
                     end
                 rescue => e
                     { error: e.message }
