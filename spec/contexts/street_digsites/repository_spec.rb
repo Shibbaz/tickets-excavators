@@ -18,7 +18,7 @@ RSpec.describe Contexts::StreetDigsites::Repository, type: :model do
       expect(data[:Suffix]).to eq(street_digsite.suffix)
     end
 
-    it 'expects to fail finding StreetDigsite by idh' do
+    it 'expects to fail finding StreetDigsite by id' do
       expect { subject.load("") }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end

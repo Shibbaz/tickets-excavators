@@ -18,7 +18,7 @@ RSpec.describe Contexts::FieldContacts::Repository, type: :model do
       expect(data[:Email]).to eq(field_contact.email)
     end
 
-    it 'expects to fail find FieldContact by id' do
+    it 'expects to fail finding FieldContact by id' do
       expect { subject.load("") }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end

@@ -14,7 +14,7 @@ RSpec.describe Contexts::ServiceAreas::Repository, type: :model do
       expect(data.key? :AdditionalServiceAreaCodes).to be(true)
     end
 
-    it 'expects to fail finding ServiceArea by idh' do
+    it 'expects to fail finding ServiceArea by id' do
       expect { subject.load("") }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
