@@ -83,3 +83,5 @@ gem 'redis'
 gem 'simplecov', require: false, group: :test
 
 gem "json-diff", "~> 0.4.1"
+
+gem "geocoder", "~> 1.8"
