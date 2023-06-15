@@ -11,20 +11,27 @@ class TicketsController < ApplicationController
       }
   rescue => e
     render :json => {
-      error: "Not Enough Params, Please check your params",
+      error: "Please check your params",
       status: 400
     }
   end
 
   def show
-    render :json => {
-      data: JSONBuilder::Ticket.call(@ticket)
-    }
+    respond_to do |format|
+      format.html { 
+        render :show
+      }
+      format.json { 
+        render :json => { data: JSONBuilder::Ticket.call(@ticket) } 
+      }
+    end
   end
 
   private
     def set_ticket
       @ticket = Ticket.find(params[:id])
+      @polygon = @ticket.excavation_info.digsite_info.polygon.coordinates.first
+
     rescue => e
       render :json => {
         error: "Records Not Found",
