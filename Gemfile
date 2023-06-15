@@ -80,3 +80,4 @@ gem 'activerecord-postgis-adapter'
 gem 'faker'
 gem "mapkick-rb"
 gem 'redis'
+gem 'simplecov', require: false, group: :test

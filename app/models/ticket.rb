@@ -34,7 +34,6 @@ class Ticket < ApplicationRecord
             RequestTakenDateTime: ticket_dates.request_taken_date_time,
             ResponseDueDateTime: ticket_dates.response_due_date_time,
             LegalDateTime: ticket_dates.legal_date_time,
-            ResponseDueDateTime: ticket_dates.response_due_date_time,
             RestakeDate: ticket_dates.restake_date,
             ExpirationDate: ticket_dates.expiration_date,
             LPMmettingAcceptDueDate: ticket_dates.lpm_metting_accept_due_date,

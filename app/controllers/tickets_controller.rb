@@ -33,7 +33,6 @@ class TicketsController < ApplicationController
     def build_json(ticket)
       {
         RequestType: ticket.request_type,
-        RequestNumber: ticket.request_number,
         VersionNumber: ticket.version_number,
         RequestNumber: ticket.request_number,
         RequestAction: ticket.request_action,
