@@ -6,9 +6,8 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket = Trees::Ticket::Build.new(params["data"]).call
     render :json => {
-      data: build_json(@ticket)
+      data: JSONBuilder::Ticket.call(Trees::Ticket::Build.new(params["data"]).call)
       }
   rescue => e
     render :json => {
@@ -19,7 +18,7 @@ class TicketsController < ApplicationController
 
   def show
     render :json => {
-      data: build_json(@ticket)
+      data: JSONBuilder::Ticket.call(@ticket)
     }
   rescue => e
     render :json => {
@@ -29,20 +28,6 @@ class TicketsController < ApplicationController
   end
 
   private
-
-    def build_json(ticket)
-      {
-        RequestType: ticket.request_type,
-        VersionNumber: ticket.version_number,
-        RequestNumber: ticket.request_number,
-        RequestAction: ticket.request_action,
-        DateTimes: ticket.ticket_dates,
-        ServiceArea: ::Contexts::ServiceAreas::Repository.new.load(ticket.service_areas_id),
-        Excavator: ::Contexts::Excavators::Repository.new.load(ticket.excavator_id),
-        ExcavationInfo: ::Contexts::ExcavationDatas::Repository.new.load(ticket.excavation_info_id)
-      }
-    end
-
     def set_ticket
       @ticket = Ticket.find(params[:id])
     end
