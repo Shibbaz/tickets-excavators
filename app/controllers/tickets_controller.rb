@@ -20,16 +20,16 @@ class TicketsController < ApplicationController
     render :json => {
       data: JSONBuilder::Ticket.call(@ticket)
     }
-  rescue => e
-    render :json => {
-      error: "Not Found",
-      status: 404
-    }
   end
 
   private
     def set_ticket
       @ticket = Ticket.find(params[:id])
+    rescue => e
+      render :json => {
+        error: "Records Not Found",
+        status: 404
+      }
     end
 end
 

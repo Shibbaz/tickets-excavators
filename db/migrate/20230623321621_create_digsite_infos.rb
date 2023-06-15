@@ -7,7 +7,7 @@ class CreateDigsiteInfos < ActiveRecord::Migration[7.0]
       t.references :adress_info, null: false, foreign_key: true
       t.references :near_streets, null: false, foreign_key: true
       t.references :intersections, null: false, foreign_key: true
-      t.st_polygon :polygon
+      t.st_polygon :polygon, geographic: true
     end
   end
 end

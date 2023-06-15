@@ -3,7 +3,7 @@ require 'faker'
 FactoryBot.define do
     factory :digsite_info do
             id { Faker::Number.within(range: 1..1000) }
-            polygon { "POLYGON ((-74.2503655987721 40.5091442241349, -74.2504120352793 40.5091183000754, -74.2503322759711 40.5090405104492))" }
+            polygon { "POLYGON ((-74.2503655987721 40.5091442241349, -74.2504120352793 40.5091183000754, -74.2503322759711 40.5090405104492, -74.2503655987721 40.5091442241349 ))" }
             look_up_by { "MANUAL" }
             location_type { "Multiple Address" }
             subdivision { "" }

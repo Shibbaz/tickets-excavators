@@ -46,7 +46,7 @@
         "TypeOfWork": "rpr man hole tops",
         "WorkDoneFor": "gpc",
         "ProjectDuration": "60 days",
-        "ProjectStartDate": "-4712-01-01T00:00:00.000Z",
+        "ProjectStartDate": "-4712/01/01 00:00:00",
         "Explosives": "No",
         "UnderGroundOverhead": "Underground",
         "HorizontalBoring": "Road, Driveway and Sidewalk",
@@ -106,7 +106,7 @@
                     }
                 ]
             },
-            "WellKnownText": "POLYGON ((-74.2503655987721 40.5091442241349, -74.2504120352793 40.5091183000754, -74.2503322759711 40.5090405104492))"
+            "WellKnownText": "POLYGON ((-74.2503655987721 40.5091442241349, -74.2504120352793 40.5091183000754, -74.2503322759711 40.5090405104492, -74.2503655987721 40.5091442241349))"
         }
     }
 }

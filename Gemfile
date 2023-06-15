@@ -81,3 +81,5 @@ gem 'faker'
 gem "mapkick-rb"
 gem 'redis'
 gem 'simplecov', require: false, group: :test
+
+gem "json-diff", "~> 0.4.1"

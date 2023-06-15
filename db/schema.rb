@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_23_321623) do
     t.bigint "adress_info_id", null: false
     t.bigint "near_streets_id", null: false
     t.bigint "intersections_id", null: false
-    t.geometry "polygon", limit: {:srid=>0, :type=>"st_polygon"}
+    t.geography "polygon", limit: {:srid=>4326, :type=>"st_polygon", :geographic=>true}
     t.index ["adress_info_id"], name: "index_digsite_infos_on_adress_info_id"
     t.index ["intersections_id"], name: "index_digsite_infos_on_intersections_id"
     t.index ["near_streets_id"], name: "index_digsite_infos_on_near_streets_id"
