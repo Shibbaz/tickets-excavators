@@ -4,7 +4,7 @@ module Contexts
             class Build
                 def call(primary_service_area_codes_id:, additional_service_area_codes_id:)
                     ServiceArea.transaction do
-                        ServiceArea.create(id: Faker::Number.number(digits: 8), 
+                        ServiceArea.create(id: SecureRandom.uuid, 
                             primary_service_area_codes_id: primary_service_area_codes_id,
                             additional_service_area_codes_id: additional_service_area_codes_id
                         )

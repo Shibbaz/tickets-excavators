@@ -9,7 +9,7 @@ module Contexts
                 def call(contact_id:, field_contact_id:)
                     Excavator.transaction do
                         Excavator.create(
-                            id: Faker::Number.number(digits: 8),
+                            id: SecureRandom.uuid,
                             contacts_id: contact_id,
                             field_contacts_id: field_contact_id,
                             company_name: @params[:CompanyName], 

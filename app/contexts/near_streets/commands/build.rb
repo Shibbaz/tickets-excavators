@@ -9,7 +9,7 @@ module Contexts
                 def call
                     NearStreet.transaction do
                         NearStreet.create(
-                            id: Faker::Number.number(digits: 8),
+                            id: SecureRandom.uuid,
                             state: @params[:State],
                             county: @params[:County],
                             place: @params[:Place],

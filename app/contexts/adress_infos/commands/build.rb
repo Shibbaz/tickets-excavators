@@ -8,7 +8,7 @@ module Contexts
 
                 def call(street_id:, adress_id:)
                     AdressInfo.transaction do
-                        entity = AdressInfo.create(id: Faker::Number.number(digits: 8), 
+                        entity = AdressInfo.create(id: SecureRandom.uuid, 
                             state: @params[:State],
                             county: @params[:County],
                             place: @params[:Place],

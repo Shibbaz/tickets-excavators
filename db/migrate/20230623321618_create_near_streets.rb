@@ -1,6 +1,6 @@
 class CreateNearStreets < ActiveRecord::Migration[7.0]
   def change
-    create_table :near_streets do |t|
+    create_table :near_streets, id: :uuid do |t|
       t.text :state
       t.text :county
       t.text :place

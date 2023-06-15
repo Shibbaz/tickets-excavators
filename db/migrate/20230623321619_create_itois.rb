@@ -1,6 +1,6 @@
 class CreateItois < ActiveRecord::Migration[7.0]
   def change
-    create_table :itois do |t|
+    create_table :itois, id: :uuid do |t|
       t.text :state
       t.text :county
       t.text :place

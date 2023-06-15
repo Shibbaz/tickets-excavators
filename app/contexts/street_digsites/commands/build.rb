@@ -8,7 +8,7 @@ module Contexts
 
                 def call
                     StreetDigsite.transaction do
-                        StreetDigsite.create(id: Faker::Number.number(digits: 8), 
+                        StreetDigsite.create(id: SecureRandom.uuid, 
                             prefix: @params[:Prefix],
                             name: @params[:Name],
                             dig_type: @params[:Type],

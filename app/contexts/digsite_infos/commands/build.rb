@@ -9,7 +9,7 @@ module Contexts
                 def call(adress_info_id:, near_street_id:, intersection_id:)
                     DigsiteInfo.transaction do
                         DigsiteInfo.create(
-                            id: Faker::Number.number(digits: 8),
+                            id: SecureRandom.uuid,
                             polygon: @params[:WellKnownText], 
                             look_up_by: @params[:LookUpBy],
                             location_type: @params[:LocationType],

@@ -17,7 +17,7 @@ module Contexts
                     lpm_metting_accept_due_date = @params[:LPMmettingAcceptDueDate]
                     overhead_end_date = @params[:OverheadEndDate]
                     TicketDates.transaction do
-                        TicketDates.create(id: Faker::Number.number(digits: 8), 
+                        TicketDates.create(id: SecureRandom.uuid, 
                             response_due_date_time: response_due_date_time, 
                             transmission_date_time: transmission_date_time,
                             legal_date_time: legal_date_time,

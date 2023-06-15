@@ -1,6 +1,6 @@
 class CreateTicketDates < ActiveRecord::Migration[7.0]
   def change
-    create_table :ticket_dates do |t|
+    create_table :ticket_dates, id: :uuid do |t|
       t.datetime :request_taken_date_time, null: false
       t.datetime :transmission_date_time, null: false
       t.datetime :legal_date_time, null: false

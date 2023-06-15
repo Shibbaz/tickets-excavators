@@ -9,7 +9,7 @@ module Contexts
                 def call
                     FieldContact.transaction do
                         FieldContact.create( 
-                            id: Faker::Number.number(digits: 8),
+                            id: SecureRandom.uuid,
                             name: @params[:Name],
                             phone: @params[:Phone],
                             email: @params[:Email]

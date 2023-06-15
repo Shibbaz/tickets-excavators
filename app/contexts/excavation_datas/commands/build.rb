@@ -9,7 +9,7 @@ module Contexts
                 def call(digsite_infos_id:)
                     ExcavationInfo.transaction do
                         obj =ExcavationInfo.create(
-                            id: Faker::Number.number(digits: 8),
+                            id: SecureRandom.uuid,
                             type_of_work: @params[:TypeOfWork],
                             work_done_for: @params[:WorkDoneFor],
                             project_duration: @params[:ProjectDuration],

@@ -1,6 +1,6 @@
 class CreateExcavationInfos < ActiveRecord::Migration[7.0]
   def change
-    create_table :excavation_infos do |t|
+    create_table :excavation_infos, id: :uuid do |t|
       t.text :type_of_work
       t.text :work_done_for
       t.datetime :project_start_date, null: false
@@ -11,7 +11,7 @@ class CreateExcavationInfos < ActiveRecord::Migration[7.0]
       t.text :white_lined
       t.text :locate_instructions
       t.text :remarks
-      t.references :digsite_infos, null: false, foreign_key: true
+      t.references :digsite_infos, null: false, foreign_key: true, type: :uuid
 
       t.timestamps
     end
