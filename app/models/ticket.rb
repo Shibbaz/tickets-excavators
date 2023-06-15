@@ -15,6 +15,18 @@ class Ticket < ApplicationRecord
         promise.sync
     end
 
+    def excavation_info
+        loader = Dataloader.new do |ids|
+            excavation_infos = ExcavationInfo.find(*ids)
+            [excavation_infos]
+        end
+        if self.excavation_info_id.eql? nil
+            return {}
+        end
+        promise = loader.load(self.excavation_info_id)
+        promise.sync
+    end
+
     def service_areas
         loader = Dataloader.new do |ids|
             service_areas = ServiceArea.find(*ids)
