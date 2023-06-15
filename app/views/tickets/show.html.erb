@@ -1,10 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @ticket %>
-
+Polygon data : <%= @polygon %>
 <div>
-  <%= link_to "Edit this ticket", edit_ticket_path(@ticket) %> |
-  <%= link_to "Back to tickets", tickets_path %>
-
-  <%= button_to "Destroy this ticket", @ticket, method: :delete %>
+<%= area_map [{geometry: {type: "MultiPolygon", coordinates: @polygon}}],color: "#6F255D", zoom: 20000, controls: true %>
 </div>
