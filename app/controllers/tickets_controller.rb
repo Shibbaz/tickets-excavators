@@ -7,20 +7,35 @@ class TicketsController < ApplicationController
   end
 
   def create
-    Trees::Ticket::Build.new(params[:data]).call
+    @ticket = Trees::Ticket::Build.new(params["data"]).call
+    render :json => {
+      data: {
+        RequestType: @ticket.request_type,
+        RequestNumber: @ticket.request_number,
+        VersionNumber: @ticket.version_number,
+        RequestNumber: @ticket.request_number,
+        RequestAction: @ticket.request_action,
+        DateTimes: @ticket.ticket_dates,
+        ServiceArea: ::Contexts::ServiceAreas::Repository.new.load(@ticket.service_areas_id),
+        Excavator: ::Contexts::Excavators::Repository.new.load(@ticket.excavator_id),
+        ExcavationInfo: ::Contexts::ExcavationDatas::Repository.new.load(@ticket.excavation_info_id)
+      }
+    }
   end
 
   def show
     render :json => {
-      RequestType: @ticket.request_type,
-      RequestNumber: @ticket.request_number,
-      VersionNumber: @ticket.version_number,
-      RequestNumber: @ticket.request_number,
-      RequestAction: @ticket.request_action,
-      DateTimes: @ticket.ticket_dates,
-      ServiceArea: ::Contexts::ServiceAreas::Repository.new.load(@ticket.service_areas_id),
-      Excavator: ::Contexts::Excavators::Repository.new.load(@ticket.excavator_id),
-      ExcavationInfo: ::Contexts::ExcavationDatas::Repository.new.load(@ticket.excavation_info_id)
+      data: {
+        RequestType: @ticket.request_type,
+        RequestNumber: @ticket.request_number,
+        VersionNumber: @ticket.version_number,
+        RequestNumber: @ticket.request_number,
+        RequestAction: @ticket.request_action,
+        DateTimes: @ticket.ticket_dates,
+        ServiceArea: ::Contexts::ServiceAreas::Repository.new.load(@ticket.service_areas_id),
+        Excavator: ::Contexts::Excavators::Repository.new.load(@ticket.excavator_id),
+        ExcavationInfo: ::Contexts::ExcavationDatas::Repository.new.load(@ticket.excavation_info_id)
+      }
     }
   end
 

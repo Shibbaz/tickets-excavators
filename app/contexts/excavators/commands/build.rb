@@ -12,7 +12,7 @@ module Contexts
                             id: Faker::Number.number(digits: 8),
                             contacts_id: contact_id,
                             field_contacts_id: field_contact_id,
-                            company_name: @params[:Company], 
+                            company_name: @params[:CompanyName], 
                             address: @params[:Address],
                             city: @params[:City],
                             state: @params[:State],

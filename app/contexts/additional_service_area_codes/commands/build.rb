@@ -8,7 +8,7 @@ module Contexts
 
                 def call
                     AdditionalServiceAreaCode.transaction do
-                        AdditionalServiceAreaCode.create(id: Faker::Number.number(digits: 8), sa_code: @params["SACODE"])
+                        AdditionalServiceAreaCode.create(id: Faker::Number.number(digits: 8), sa_code: @params[:SACode])
                     end
                 rescue => e
                     { error: e.message }
