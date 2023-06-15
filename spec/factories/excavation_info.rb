@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :excavation_info do
-        id { Faker::Number.within(range: 1..1000) }
+        id { SecureRandom.uuid }
         type_of_work { "rpr man hole tops" }
         work_done_for {"gpc" }
         project_duration { "60 days" }

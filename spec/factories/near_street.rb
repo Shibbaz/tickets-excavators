@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :near_street do
-        id { Faker::Number.within(range: 1..1000) }
+        id { SecureRandom.uuid }
         state { "XX" }
         county { "SomeCounty" }
         place { "City" }

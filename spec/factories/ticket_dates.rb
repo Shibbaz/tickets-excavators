@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :ticket_dates do
-        id { Faker::Number.within(range: 1..1000) }
+        id { SecureRandom.uuid }
         response_due_date_time { DateTime.new }
         transmission_date_time { DateTime.new }
         legal_date_time { DateTime.new }

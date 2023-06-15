@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :itoi do
-        id { Faker::Number.within(range: 1..1000) }
+        id { SecureRandom.uuid }
         state { "XX" }
         county { "FULERTON" }
         place { "NORCROSS" }

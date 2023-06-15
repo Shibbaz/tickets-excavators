@@ -16,9 +16,8 @@ RSpec.describe TicketsController, type: :controller do
         it "expects error" do
             post :create, params: {data: {}}
             json_response = JSON.parse(response.body)
-            expect(json_response["error"]).to eq("Not Enough Params, Please check your params")
+            expect(json_response["error"]).to eq("Please check your params")
             expect(json_response["status"]).to eq(400)
-
         end
     end
 
@@ -34,6 +33,7 @@ RSpec.describe TicketsController, type: :controller do
         end
         
         it "expects the same json params" do
+            request.accept = "application/json"
             get :show, params: {id: ticket.id}
             expect(response.status).to eq(200)
             expect(JSON.parse(response.body)["data"].nil?).to be(false)
@@ -41,6 +41,7 @@ RSpec.describe TicketsController, type: :controller do
         end
 
         it "expects error" do
+            request.accept = "application/json"
             get :show, params: {id: SecureRandom.uuid}
             expect(JSON.parse(response.body)["error"]).to eq("Records Not Found")
         end

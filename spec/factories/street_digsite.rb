@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :street_digsite do
-        id { Faker::Number.within(range: 1..1000) }
+        id { SecureRandom.uuid }
         prefix { "" }
         name {"Trinity" }
         dig_type { "Ave" }

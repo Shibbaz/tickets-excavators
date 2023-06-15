@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :excavator do
-        id { Faker::Number.within(range: 1..1000) }
+        id { SecureRandom.uuid }
         contacts_id { create(:contact).id }
         field_contacts_id { create(:field_contact).id }
         company_name { "John Doe CONSTRUCTION" }
