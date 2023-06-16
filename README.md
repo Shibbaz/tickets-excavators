@@ -1,6 +1,8 @@
 Hello The solution is implemented using Postgis - Postgres extension for geospatial data, to store polygons in database
 - [x] Installation postgis to your postgres database:
   - https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS3UbuntuPGSQLApt
+- [x] Gems
+  - bundle install
 - [x] Database creation
   - rails db:create
 - [x] Database migration
