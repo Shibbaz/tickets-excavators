@@ -22,9 +22,21 @@ RSpec.describe Contexts::ExcavationDatas::Commands::Build, type: :model do
     }
 
     it "is successful" do
-      expect(subject.call(
+      result = subject.call(
         digsite_infos_id: digsite_info.id
-      )).to be_valid
+      )
+      expect(result).to be_valid
+      expect(result.class).to be(ExcavationInfo)
+      expect(result.type_of_work).to eq("TypeOfWork")
+      expect(result.work_done_for).to eq("WorkDoneFor")
+      expect(result.project_duration).to eq("ProjectDuration")
+      expect(result.project_start_date).to eq("-4712/01/01 00:00:00")
+      expect(result.explosives).to eq("Explosives")
+      expect(result.under_ground_over_head).to eq("UnderGroundOverhead")
+      expect(result.horizontal_boring).to eq("HorizontalBoring")
+      expect(result.white_lined).to eq("Whitelined")
+      expect(result.locate_instructions).to eq("LocateInstructions")
+      expect(result.remarks).to eq("Remarks")
     end
   end
 end

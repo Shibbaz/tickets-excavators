@@ -11,7 +11,6 @@ module Contexts
                     Intersection.transaction do
                         Itoi.transaction do
                             @params[:ItoI].each do |itoi|
-                                args = itoi.as_json.merge(id: SecureRandom.uuid)
                                 itoi = Contexts::Itois::Commands::Build.new(itoi).call
                                 itoi_ids << itoi.id
                             end

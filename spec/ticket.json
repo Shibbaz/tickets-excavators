@@ -63,7 +63,7 @@
                 "Place": "Melbourne",
                 "Zip": "3000",
                 "Adress": {
-                    "AdressNum": [
+                    "AddressNum": [
                         "Adress 1",
                         "Adress 2"
                     ]

@@ -20,7 +20,13 @@ RSpec.describe Contexts::StreetDigsites::Commands::Build, type: :model do
     }
 
     it "is successful" do
-      expect(subject.call).to be_valid
+      result = subject.call
+      expect(result).to be_valid
+      expect(result.class).to be(StreetDigsite)
+      expect(result.prefix).to eq("Prefix")
+      expect(result.name).to eq("Name")
+      expect(result.dig_type).to eq("Type")
+      expect(result.suffix).to eq("Suffix")
     end
   end
 end

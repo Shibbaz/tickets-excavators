@@ -24,11 +24,16 @@ RSpec.describe Contexts::DigsiteInfos::Commands::Build, type: :model do
     }
 
     it "is successful" do
-      expect(subject.call(
+      result = subject.call(
         adress_info_id: adress_info.id,
         near_street_id: near_street.id,
         intersection_id: intersection.id
-      )).to be_valid
+      )
+      expect(result).to be_valid
+      expect(result.class).to be(DigsiteInfo)
+      expect(result.look_up_by).to eq("look up by")
+      expect(result.location_type).to eq("location type")
+      expect(result.subdivision).to eq("sub division")
     end
   end
 end

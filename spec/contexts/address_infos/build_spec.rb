@@ -19,10 +19,16 @@ RSpec.describe Contexts::AdressInfos::Commands::Build, type: :model do
       })
     }
     it "is successful" do
-      expect(subject.call(
+      result = subject.call(
         adress_id: adress_digsite.id,
         street_id: street_digsite.id
-      )).to be_valid
+      )
+      expect(result).to be_valid
+      expect(result.class).to be(AdressInfo)
+      expect(result.state).to eq("State")
+      expect(result.county).to eq("County")
+      expect(result.place).to eq("Place")
+      expect(result.zip).to eq("Zip")
     end
   end
 end

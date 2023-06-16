@@ -8,7 +8,10 @@ RSpec.describe Contexts::AdditionalServiceAreas::Commands::Build, type: :model d
       })
     }
     it "is successful" do
-      expect(subject.call).to be_valid
+      result = subject.call
+      expect(result).to be_valid
+      expect(result.class).to be(AdditionalServiceAreaCode)
+      expect(result.sa_code).to eq(["SACode"])
     end
   end
 end

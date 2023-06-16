@@ -20,7 +20,7 @@ module Contexts
             private
             def format(object)
                 [
-                    AdressNum: object.adress_num
+                    AddressNum: object.adress_num
                 ]
             end
         end

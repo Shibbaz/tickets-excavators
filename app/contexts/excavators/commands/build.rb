@@ -18,7 +18,7 @@ module Contexts
                             state: @params[:State],
                             zip: @params[:Zip],
                             crew_on_site: @params[:CrewOnsite],
-                            type: @params[:ExcavatorType]
+                            type: @params[:Type]
                         )
                     end
                 rescue => e

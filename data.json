@@ -64,7 +64,7 @@
                     "Place": "PLACE",
                     "Zip": "",
                     "Adress": {
-                        "AdressNum": [
+                        "AddressNum": [
                             "Adress 1",
                             "Adress 2"
                         ]

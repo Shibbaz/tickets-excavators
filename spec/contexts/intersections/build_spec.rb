@@ -2,17 +2,25 @@ require "rails_helper"
 
 RSpec.describe Contexts::Intersections::Commands::Build, type: :model do
   describe ".call" do
-    let(:itoi) {
-      create(:itoi)
-    }
     subject {
       described_class.new({
-        ItoI: [itoi]
+        ItoI: [{
+            State: "Victoria",
+            County: "Bourke, Evelyn, Grant, Mornington",
+            Place: "Melbourne",
+            Prefix: "",
+            Name: "Melbourne",
+            Type: "St",
+            Suffix: "SW"
+        }]
       })
     }
 
     it "is successful" do
-      expect(subject.call).to be_valid
+      result = subject.call
+      expect(result).to be_valid
+      expect(result.class).to be(Intersection)
+      expect(result.itoi_ids).to eq([Itoi.first.id])
     end
   end
 end

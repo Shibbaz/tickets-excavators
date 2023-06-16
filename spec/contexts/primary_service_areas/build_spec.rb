@@ -8,7 +8,10 @@ RSpec.describe Contexts::PrimaryServiceAreas::Commands::Build, type: :model do
       })
     }
     it "is successful" do
-      expect(subject.call).to be_valid
+      result = subject.call
+      expect(result).to be_valid
+      expect(result.class).to be(PrimaryServiceAreaCode)
+      expect(result.sa_code).to eq("SACode")
     end
   end
 end

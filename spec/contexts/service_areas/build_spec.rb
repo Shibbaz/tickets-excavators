@@ -13,10 +13,15 @@ RSpec.describe Contexts::ServiceAreas::Commands::Build, type: :model do
     subject { described_class.new }
 
     it "is successful" do
-      expect(subject.call(
+      result = subject.call(
         primary_service_area_codes_id: primary_service_area_code.id,
         additional_service_area_codes_id: additional_service_area_code.id
-      )).to be_valid
+      )
+      expect(result).to be_valid
+      expect(result.class).to be(ServiceArea)
+      expect(result.primary_service_area_codes_id).to eq(primary_service_area_code.id)
+      expect(result.additional_service_area_codes_id).to eq(additional_service_area_code.id)
+
     end
   end
 end
