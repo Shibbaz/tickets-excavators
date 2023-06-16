@@ -1,0 +1,2 @@
+class StreetDigsite < ApplicationRecord
+end
