@@ -7,6 +7,8 @@ Hello The solution is implemented using Postgis - Postgres extension for geospat
   - rails db:migrate
 - [x] Database seeds
   - rails db:seeds
+- [x] Add MAPBOX_ACCESS_TOKEN to your env
+  - Create account https://www.mapbox.com/ and generate api key
 - [x] Running server
   - rails s
      
