@@ -1,24 +1,42 @@
-# README
+Hello The solution is implemented using Postgis - Postgres extension for geospatial data, to store polygons in database
+- [x] Installation postgis to your postgres database:
+  - https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS3UbuntuPGSQLApt
+- [x] Database creation
+  - rails db:create
+- [x] Database migration
+  - rails db:migrate
+- [x] Database seeds
+  - rails db:seeds
+- [x] Running server
+  - rails s
+     
+- [x] Posting Ticket
+  - POST request
+  - endpoint http://localhost:3000/tickets
+  - must have all params from the json you provided me, there is sample json below
+  - body
+    - {"data": json}
+      - replace json keyword with the content of the file  https://github.com/Shibbaz/tickets-excavators/blob/TASK-001/spec/ticket.json
+- [x] Getting Ticket
+  - GET request
+  - http://localhost:3000/tickets/id
+  - id can be found be Ticket.first.id, user rails c
+  - replace id keyword with the found id
+     
+  - Sample usage
+    
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://github.com/Shibbaz/tickets-excavators/assets/107750344/e10d375b-0773-44a4-8f16-0833016efd93
 
-Things you may want to cover:
+- [x] Testing
+  - rspec
+  - coverage 95%
+  - request and model specs
+  - repositories specs
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
