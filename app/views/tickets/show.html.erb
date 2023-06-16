@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 Polygon data : <%= @polygon %>
+</br>Place : <%= @adress_info.place %>
+</br>County : <%= @adress_info.county %>
+</br> State : <%= @adress_info.state %>
+
 <div>
-<%= area_map [{geometry: {type: "MultiPolygon", coordinates: @polygon}}],color: "#6F255D", zoom: 20000, controls: true %>
+<%= area_map [{geometry: {type: "Polygon", coordinates: [@polygon]}}],color: "#6F255D" %>
 </div>

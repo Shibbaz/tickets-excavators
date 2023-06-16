@@ -30,7 +30,9 @@ class TicketsController < ApplicationController
   private
     def set_ticket
       @ticket = Ticket.find(params[:id])
-      @polygon = @ticket.excavation_info.digsite_info.polygon.coordinates.first
+      @digsite_info = @ticket.excavation_info.digsite_info
+      @adress_info = AdressInfo.find(@digsite_info.adress_info_id)
+      @polygon = @digsite_info.polygon.coordinates.first
 
     rescue => e
       render :json => {
