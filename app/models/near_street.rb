@@ -1,0 +1,2 @@
+class NearStreet < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class PrimaryServiceAreaCode < ApplicationRecord
+end
