@@ -33,11 +33,11 @@ Hello The solution is implemented using Postgis - Postgres extension for geospat
   - http://localhost:3000/tickets/id
   - id can be found be Ticket.first.id, user rails c
   - replace id keyword with the found id
-     
-  - Sample usage
-    
 
-https://github.com/Shibbaz/tickets-excavators/assets/107750344/e10d375b-0773-44a4-8f16-0833016efd93
+
+
+https://github.com/Shibbaz/tickets-excavators/assets/107750344/475d9d25-7e58-418f-a8cd-18c40a0d7eea
+
 
 - [x] Testing
   - rspec
